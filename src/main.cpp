@@ -24,14 +24,6 @@ int main(int argc, char** argv) {
     string filename = argv[1];
     fstream file(filename);
 
-    string help;
-    help = "Help:";
-
-    if (filename == "--help") {
-        cout << endl;
-        cout << help;
-        cout << endl;
-    }
     else if (!file) {
         cout << "Failed to open!";
         file.close();
