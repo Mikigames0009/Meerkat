@@ -19,12 +19,10 @@ int main(int argc, char** argv) {
 
     string filename = argv[1];
 
-    fstream file;
-    
-    file.open(filename);
+    fstream file(filename);
 
     if (!file) {
-        cout << "Couldn't find file or cannot open files with that extension!";
+        cout << "Failed to open!";
         exit(-1);
     }
 
@@ -35,6 +33,8 @@ int main(int argc, char** argv) {
     while (getline(file, line)) {
 	    cout << line << endl;
     }
+
+    cout << endl;
 
     file.close();
  
